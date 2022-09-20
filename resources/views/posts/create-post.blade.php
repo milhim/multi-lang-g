@@ -10,7 +10,7 @@
         </li>
     </ul>
     <div class="card">
-        <form action="{{ route('post.store') }}" method="POST">
+        <form action="{{ route('post.store',app()->getLocale()) }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="author">Author</label>

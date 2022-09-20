@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('post/{locale}', PostController::class);
+Route::get('post/create/{locale}',[PostController::class,'create'])->name('post.create');
+Route::get('posts/{locale}',[PostController::class,'index'])->name('post.index');
+Route::post('post/create/{locale}',[PostController::class,'store'])->name('post.store');
+
 Route::get('/', function () {
   
 });

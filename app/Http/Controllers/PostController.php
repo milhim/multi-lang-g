@@ -14,8 +14,8 @@ class PostController extends Controller
      */
     public function index($locale)
     {
-            app()->setLocale($locale);
-        
+        app()->setLocale($locale);
+
         $posts = Post::all();
         return view('home', ['posts' => $posts]);
     }
@@ -25,9 +25,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($locale)
     {
         //
+        app()->setLocale($locale);
+
         return view('posts.create-post');
     }
 
